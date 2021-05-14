@@ -5,18 +5,23 @@ using UnityEngine.UI;
 public class FinalScoreDisplay : MonoBehaviour
 {
 
-    Text finalScoreText;
     GameSession gameSession;
+    int gameSessionScore;
+    [SerializeField] Text finalScoreDisplay;
 
     void Start()
     {
-        finalScoreText = GetComponent<Text>();
-        gameSession = FindObjectOfType<GameSession>();
+        
+        
     }
 
     
     void Update()
     {
-        finalScoreText.text = gameSession.getScore().ToString();
+        gameSession = FindObjectOfType<GameSession>();
+        gameSessionScore = gameSession.score;
+        finalScoreDisplay.text = gameSessionScore.ToString();
+       
+        
     }
 }

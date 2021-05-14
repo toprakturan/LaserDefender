@@ -7,13 +7,12 @@ using TMPro;
 public class UIScript : MonoBehaviour
 {
     
+    
     public TextMeshProUGUI healthText;
     public int currentHealth;
     Player player;
     
 
-    
-    
 
     void Start()
     {
@@ -25,10 +24,13 @@ public class UIScript : MonoBehaviour
     void Update()
     {
         
-        
         currentHealth = player.health;
         healthText.text = currentHealth.ToString();
 
+    }
 
+    public void ShowHealthAttention()
+    {
+        
     }
 }

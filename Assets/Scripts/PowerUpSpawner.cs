@@ -4,27 +4,44 @@ using UnityEngine;
 
 public class PowerUpSpawner : MonoBehaviour
 {
-
-    [SerializeField] List<GameObject> powerUps;
-    public bool stopSpawning = false;
-    public float spawnTime;
-    public float spawnDelay;
-
-
+    [SerializeField] public List<GameObject> powerUpImages;
+    [SerializeField] GameObject powerUpLocationObject;
+    [SerializeField] public float spawnTime;
+    [SerializeField] public float spawnDelay;
+    public List<Transform> powerUpLocations;
+    public bool stopSpawn = false;
+    public float destroyTime;
     
+
+
+    private void Awake()
+    {
+         // var powerUpLocations = new List<Transform>();
+        foreach (Transform child in powerUpLocationObject.transform)
+        {
+            powerUpLocations.Add(child);
+        }
+    }
+
     void Start()
     {
-        InvokeRepeating("SpawnObject", spawnTime, spawnDelay);
+        InvokeRepeating("powerUpSpawner", spawnTime, spawnDelay);
+    }
+
+    void Update()
+    {
         
     }
 
-   
-    public void SpawnObject()
+    private void powerUpSpawner()
     {
-        Instantiate(powerUps[Random.Range(0,5)], , transform.rotation);
-        if (stopSpawning)
+       var powerUp =  Instantiate(powerUpImages[Random.Range(0, 2)], powerUpLocations[Random.Range(0, 5)].transform.position, 
+            powerUpLocations[Random.Range(0, 5)].transform.rotation);
+        if(stopSpawn == true)
         {
-            CancelInvoke("SpawnObject");
+            CancelInvoke("powerUpSpawner");
         }
+        Destroy(powerUp, destroyTime);
     }
+
 }

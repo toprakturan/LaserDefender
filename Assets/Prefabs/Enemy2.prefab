@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 4700145098162440653}
   - component: {fileID: 7301546749282268830}
   - component: {fileID: 6800832324632287383}
-  - component: {fileID: 4742372538297630800}
   - component: {fileID: 219452736670727730}
+  - component: {fileID: 4742372538297630800}
   - component: {fileID: 2863272155048689642}
   m_Layer: 9
   m_Name: Enemy2
@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 200
+  scoreValue: 150
   shotCounter: 0
   minTimeBetweenShots: 0.2
   maxTimeBetweenShots: 3
@@ -109,6 +110,18 @@ MonoBehaviour:
   shootSound: {fileID: 8300000, guid: a450656716b9a97439c598f7b52fd21c, type: 3}
   shootVolumeSound: 0.75
   score: 0
+--- !u!114 &219452736670727730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1612690561613574361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 979837ccc91bade49bfc74fe9abbbf9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!60 &4742372538297630800
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -148,18 +161,6 @@ PolygonCollider2D:
       - {x: 0.40693855, y: -0.21163127}
       - {x: 0.41, y: 0.31}
       - {x: 0.20346329, y: 0.42}
---- !u!114 &219452736670727730
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1612690561613574361}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 979837ccc91bade49bfc74fe9abbbf9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &2863272155048689642
 Rigidbody2D:
   serializedVersion: 4

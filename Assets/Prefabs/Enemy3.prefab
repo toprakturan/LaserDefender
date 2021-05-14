@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4646258230396764456}
   - component: {fileID: 4646258230396764455}
-  - component: {fileID: 4646258230396764454}
   - component: {fileID: 8575740648450450342}
   - component: {fileID: 6046323952806626765}
+  - component: {fileID: 4646258230396764454}
   - component: {fileID: -4172287004884536392}
   m_Layer: 9
   m_Name: Enemy3
@@ -85,6 +85,43 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8575740648450450342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4646258230396764453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 755a9364ac1ab6a478b86225d319a10e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 300
+  scoreValue: 150
+  shotCounter: 0
+  minTimeBetweenShots: 0.3
+  maxTimeBetweenShots: 3
+  projectile: {fileID: 5540839612841892587, guid: 836142b1237a9a449a18388efbf2c935,
+    type: 3}
+  projectileSpeed: 10
+  deathSound: {fileID: 8300000, guid: dc41f429e52f60a4aa610801033b6aff, type: 3}
+  deathSoundVolume: 0.75
+  shootSound: {fileID: 8300000, guid: a450656716b9a97439c598f7b52fd21c, type: 3}
+  shootVolumeSound: 0.75
+  score: 0
+--- !u!114 &6046323952806626765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4646258230396764453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 979837ccc91bade49bfc74fe9abbbf9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!60 &4646258230396764454
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -133,42 +170,6 @@ PolygonCollider2D:
       - {x: -0.255, y: -0.41}
       - {x: -0.13499999, y: -0.25}
       - {x: -0.125, y: -0.29999998}
---- !u!114 &8575740648450450342
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4646258230396764453}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 755a9364ac1ab6a478b86225d319a10e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 300
-  shotCounter: 0
-  minTimeBetweenShots: 0.2
-  maxTimeBetweenShots: 3
-  projectile: {fileID: 5540839612841892587, guid: 836142b1237a9a449a18388efbf2c935,
-    type: 3}
-  projectileSpeed: 10
-  deathSound: {fileID: 8300000, guid: dc41f429e52f60a4aa610801033b6aff, type: 3}
-  deathSoundVolume: 0.75
-  shootSound: {fileID: 8300000, guid: a450656716b9a97439c598f7b52fd21c, type: 3}
-  shootVolumeSound: 0.75
-  score: 0
---- !u!114 &6046323952806626765
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4646258230396764453}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 979837ccc91bade49bfc74fe9abbbf9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &-4172287004884536392
 Rigidbody2D:
   serializedVersion: 4

@@ -7,6 +7,8 @@ TagManager:
   - enemy1
   - enemy2
   - enemy3
+  - LaserPowerUp
+  - ShieldPowerUp
   layers:
   - Default
   - TransparentFX
@@ -20,7 +22,7 @@ TagManager:
   - Enemy
   - Player ProjectTile
   - Enemy ProjectTile
-  - 
+  - PowerUp
   - 
   - 
   - 
