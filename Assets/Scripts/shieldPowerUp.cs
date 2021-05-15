@@ -10,7 +10,7 @@ public class shieldPowerUp : MonoBehaviour
     public bool isCollided;
     DamageDealer damageDealer;
     [SerializeField] public GameObject projectileReference;
-
+    public int colliderCount;
     [SerializeField] public SpriteRenderer shieldSprite;
     public SpriteRenderer cloneShiledSprite;
     Player player;
@@ -23,30 +23,33 @@ public class shieldPowerUp : MonoBehaviour
         playerHealth = player.health;
         isCollided = false;
         damageDealer = FindObjectOfType<DamageDealer>();
-        
+        colliderCount = 0;
+
+
 
 
     }
     void Update()
     {
-       
+        Debug.Log(colliderCount.ToString());
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        colliderCount++;
         Debug.Log("collided");
-        
         StartCoroutine(shieldSpriteController());
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        
+
+
 
     }
 
    IEnumerator shieldSpriteController() 
     {
         isCollided = true;
-
-        if (isCollided == true)
+        if (isCollided == true && colliderCount == 1)
         {
             cloneShiledSprite = Instantiate(shieldSprite, player.transform.position, Quaternion.identity);
             cloneShiledSprite.transform.parent = player.transform;
@@ -55,10 +58,10 @@ public class shieldPowerUp : MonoBehaviour
             yield return new WaitForSeconds(5f);
             projectileReference.GetComponent<DamageDealer>().damage = 100;
             isCollided = false;
+            colliderCount = 0;
             Debug.Log(isCollided);
             Destroy(cloneShiledSprite);
-            
-            
+
 
         }
         else 

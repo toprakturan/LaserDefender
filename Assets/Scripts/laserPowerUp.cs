@@ -7,6 +7,7 @@ public class laserPowerUp : MonoBehaviour
     [SerializeField] GameObject laserPowerUpSprite;
     Player player;
     int playerHealth;
+    public int colliderCount;
 
     public bool isCollided;
 
@@ -15,20 +16,26 @@ public class laserPowerUp : MonoBehaviour
         isCollided = false;
         player = FindObjectOfType<Player>();
         playerHealth = player.health;
-
+        colliderCount = 0;
 
     }
 
+    private void Update()
+    {
+        Debug.Log(colliderCount.ToString());
+    }
 
 
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log("carpisma1");
+        colliderCount++;
         isCollided = true;
         powerUpController();
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
         
+
     }
 
 
@@ -39,6 +46,7 @@ public class laserPowerUp : MonoBehaviour
         {
             yield return new WaitForSeconds(5f);
             isCollided = false;
+            colliderCount = 0;
         }
         else
         {

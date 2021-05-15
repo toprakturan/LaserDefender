@@ -33,7 +33,8 @@ public class Player : MonoBehaviour
     shieldPowerUp ShieldPowerUp;
     public bool laserIsCollided; 
     laserPowerUp LaserPowerUp;
-    public List<GameObject> laserPowerUpCollided;
+    public int laserColliderCount;
+    
     
     
 
@@ -49,6 +50,7 @@ public class Player : MonoBehaviour
     {
         SetUpMoveBoundaries();
         
+
         
         
     }
@@ -58,7 +60,9 @@ public class Player : MonoBehaviour
     {
         Move();
         Fire();
-        
+        laserIsCollided = FindObjectOfType<laserPowerUp>().isCollided;
+        Debug.Log(laserIsCollided);
+        laserColliderCount = FindObjectOfType<laserPowerUp>().colliderCount;
 
     }
 
@@ -102,16 +106,33 @@ public class Player : MonoBehaviour
     
     IEnumerator FireContinuously()
     {
-            while (true)
-            {
-                GameObject laser = Instantiate(
-                        laserPrefab,
-                        transform.position,
-                        Quaternion.identity) as GameObject;
-                laser.GetComponent<Rigidbody2D>().velocity = new Vector2(0, projectileSpeed);
-                AudioSource.PlayClipAtPoint(playerShooting, Camera.main.transform.position, playerShootingVolume);
-                yield return new WaitForSeconds(projectileFiringPeriod);
+        if(laserIsCollided == true && laserColliderCount == 1)
+        {
+            while (true) 
+            { 
+                GameObject laserPowerUp = Instantiate(
+                laserPowerUpPrefab,
+                transform.position,
+                Quaternion.identity) as GameObject;
+            laserPowerUp.GetComponent<Rigidbody2D>().velocity = new Vector2(0, projectileSpeed);
+            AudioSource.PlayClipAtPoint(playerShooting, Camera.main.transform.position, playerShootingVolume);
+            yield return new WaitForSeconds(projectileFiringPeriod);
             }
+        }
+            
+        else
+        {
+             while (true)
+             {
+                  GameObject laser = Instantiate(
+                           laserPrefab,
+                           transform.position,
+                           Quaternion.identity) as GameObject;
+                  laser.GetComponent<Rigidbody2D>().velocity = new Vector2(0, projectileSpeed);
+                  AudioSource.PlayClipAtPoint(playerShooting, Camera.main.transform.position, playerShootingVolume);
+                  yield return new WaitForSeconds(projectileFiringPeriod);
+             }
+        }
         
     }
     

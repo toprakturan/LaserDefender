@@ -584,7 +584,8 @@ MonoBehaviour:
   health: 500
   laserPrefab: {fileID: 5658046826186445928, guid: aa02f0339c680dc4096416bf0e6433d3,
     type: 3}
-  laserPowerUpPrefab: {fileID: 0}
+  laserPowerUpPrefab: {fileID: 7556551337202854272, guid: dbaf0c72770313c4d98c03135bc92e80,
+    type: 3}
   projectileSpeed: 10
   projectileFiringPeriod: 0.1
   playerShooting: {fileID: 8300000, guid: d3294887bbe9ce745bbd4a62877e45f6, type: 3}
@@ -592,7 +593,7 @@ MonoBehaviour:
   playerDeath: {fileID: 8300000, guid: 3e19af2505036d24cab00f019a14390e, type: 3}
   playerDeathVolume: 0.75
   laserIsCollided: 0
-  laserPowerUpCollided: []
+  laserColliderCount: 0
 --- !u!1 &1172875803 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5832660183131837192, guid: 6a7b7ef6d6391b64494db716842ca9ab,
@@ -908,8 +909,8 @@ MonoBehaviour:
   - {fileID: 6486698688020175674, guid: 67c8adf35662a15478ee0f013ea5d4ef, type: 3}
   - {fileID: 3231043868919375934, guid: 527e012a76fe3fc429f06431a83daf11, type: 3}
   powerUpLocationObject: {fileID: 1172875803}
-  spawnTime: 2
-  spawnDelay: 15
+  spawnTime: 1
+  spawnDelay: 20
   powerUpLocations: []
   stopSpawn: 0
   destroyTime: 10

@@ -108,6 +108,7 @@ MonoBehaviour:
   playerShootingVolume: 0.75
   playerDeath: {fileID: 8300000, guid: 3e19af2505036d24cab00f019a14390e, type: 3}
   playerDeathVolume: 0.75
+  laserIsCollided: 0
 --- !u!60 &-9015312562242677253
 PolygonCollider2D:
   m_ObjectHideFlags: 0
