@@ -61,7 +61,6 @@ public class Player : MonoBehaviour
         Move();
         Fire();
         laserIsCollided = FindObjectOfType<laserPowerUp>().isCollided;
-        Debug.Log(laserIsCollided);
         laserColliderCount = FindObjectOfType<laserPowerUp>().colliderCount;
 
     }
@@ -120,7 +119,7 @@ public class Player : MonoBehaviour
             }
         }
             
-        else
+        else if(laserIsCollided == false && laserColliderCount == 0)
         {
              while (true)
              {

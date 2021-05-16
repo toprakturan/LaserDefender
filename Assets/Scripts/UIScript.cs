@@ -25,7 +25,15 @@ public class UIScript : MonoBehaviour
     {
         
         currentHealth = player.health;
-        healthText.text = currentHealth.ToString();
+        
+        if(currentHealth < 0)
+        {
+            healthText.text = "0";
+        }
+        else
+        {
+            healthText.text = currentHealth.ToString();
+        }
 
     }
 

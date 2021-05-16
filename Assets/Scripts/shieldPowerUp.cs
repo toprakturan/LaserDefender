@@ -66,8 +66,7 @@ public class shieldPowerUp : MonoBehaviour
         }
         else 
         {
-            
-            
+            Destroy(cloneShiledSprite);
         }
 
 

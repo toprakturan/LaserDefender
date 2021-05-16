@@ -22,7 +22,8 @@ public class laserPowerUp : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(colliderCount.ToString());
+        
+        Debug.Log(isCollided);
     }
 
 
@@ -47,10 +48,11 @@ public class laserPowerUp : MonoBehaviour
             yield return new WaitForSeconds(5f);
             isCollided = false;
             colliderCount = 0;
+            
         }
         else
         {
-
+            isCollided = false;
         }
 
 
